@@ -30,3 +30,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * You can use the code as you want
 * Inspiration to make the code better, fork it, please.
+
+## 
+https://medium.com/@josemarcialportilla/getting-spark-python-and-jupyter-notebook-running-on-amazon-ec2-dec599e1c297
