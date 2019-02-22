@@ -8,6 +8,7 @@ from EvaluationData import EvaluationData
 from EvaluatedAlgorithm import EvaluatedAlgorithm
 
 class Evaluator:
+    # 在evaluator中添加算法
     
     algorithms = []
     
@@ -28,6 +29,7 @@ class Evaluator:
         # Print results
         print("\n")
         
+        # 打印结果
         if (doTopN):
             print("{:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format(
                     "Algorithm", "RMSE", "MAE", "HR", "cHR", "ARHR", "Coverage", "Diversity", "Novelty"))

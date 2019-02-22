@@ -1,13 +1,18 @@
 # Recommender System
 
-A package of Ryan's all activate projects.
+A package of Ryan's use of RecSys algorithms. Includes SVD, ALS...
 
 ## Authors
-Ryan: 
+Ryan: Algorithm Engineer 
+* Graduated from Tongji University in 2017.
+* Graduated as MSC in The Hong Kong University of Science And Technology in 2018.
+* Chief Blockchain Engineer in Shanghai Fengying Internet Ltd.
 
-* **Billie Pool** - *Initial work* - [AlphaSunny](https://github.com/AlphaSunny)
-The author is graduate from HongKong University of Science and Technology.
-The author is now serving for a blockchain company in shanghai. You can contact me by email: epsilonsunny@gmail.com
+* **Ryan** - *Initial work* - [AlphaSunny](https://github.com/AlphaSunny)
+* Graduated from Tongji University in 2017.
+* Graduated as MSC in The Hong Kong University of Science And Technology in 2018.
+* Chief Blockchain Engineer in Shanghai Fengying Internet Ltd.
+* You can contact me by email: epsilonsunny@gmail.com
 
 ## Getting Started
 
@@ -16,11 +21,8 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 You need following packages:
-nodejs: -v 8
-python: -v 3.5
-c++: g++
-c: gcc
-solidity: solc
+python:-v 3.6
+Spakr: -v 2
 
 ## License
 
