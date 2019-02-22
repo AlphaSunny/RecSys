@@ -20,6 +20,7 @@ data = ml.loadMovieLensLatestSmall()
 
 trainSet = data.build_full_trainset()
 
+# 在这里也可以使用 pearson
 sim_options = {'name': 'cosine',
                'user_based': True
                }
