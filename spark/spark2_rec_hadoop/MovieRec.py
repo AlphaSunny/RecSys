@@ -40,8 +40,21 @@ if __name__ == "__main__":
         print(movieNames[rating['movieID']], rating['rating']) 
 
     print("\n top20 movie ratings")
+    ratingCounts = ratings.groupBy("movieID").count().filter("count>100")
 
+    # create two column, one is movieID, another is the userID with the value of always 0
+    popularMovies = ratingCounts.select("movieID").withColumn("userID", lit(0))
+
+    recommendations = model.transform(popularMovies)
+
+    topRecommendations = recommendations.sort(recommendations.prediction.desc()).take(20)
+
+    for recommendation in topRecommendations:
+        print(movieNames[recommendation['movieID']], recommendations['prediction'])
+
+    spark.stop()
     # avgRating = moviesDataset.groupBy("movieID").avg("rating")
+    
 
     # counts = moviesDataset.groupBy("movieID").count()
 
