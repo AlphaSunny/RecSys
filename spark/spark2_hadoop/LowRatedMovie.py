@@ -18,7 +18,7 @@ def parseInput(line):
 if __name__ == "__main__":
     spark = SparkSession.builder.appName('PopularMovies').getOrCreate()
 
-    #获得movieName
+    # get movieName
     movieNames = loadMovieNames()
 
     lines = spark.sparkContext.textFile("hdfs:///user/maria_dev/ml-100k/u.data")
