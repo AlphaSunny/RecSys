@@ -50,7 +50,7 @@ if __name__ == "__main__":
     topRecommendations = recommendations.sort(recommendations.prediction.desc()).take(20)
 
     for recommendation in topRecommendations:
-        print(movieNames[recommendation['movieID']], recommendations['prediction'])
+        print(movieNames[recommendation['movieID']], recommendation['prediction'])
 
     spark.stop()
     # avgRating = moviesDataset.groupBy("movieID").avg("rating")
