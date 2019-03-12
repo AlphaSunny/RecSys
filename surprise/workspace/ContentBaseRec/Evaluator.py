@@ -14,15 +14,15 @@ class Evaluator:
         ed = EvaluationData(dataset, rankings)
         self.dataset = ed
         
-    def AddAlgorithm(self, algorithm, name):
+    def addAlgorithm(self, algorithm, name):
         alg = EvaluatedAlgorithm(algorithm, name)
         self.algorithms.append(alg)
      
-    def Evaluate(self, doTopN):
+    def evaluate(self, doTopN):
         results = {}
         for algorithm in self.algorithms:
-            print("Evaluating", algorithm.GetName(), "...")
-            results[algorithm.GetName()] = algorithm.Evaluate(self.dataset, doTopN)
+            print("Evaluating", algorithm.getName(), "...")
+            results[algorithm.getName()] = algorithm.Evaluate(self.dataset, doTopN)
             
         print("\n")
         
@@ -50,17 +50,17 @@ class Evaluator:
             print("           for a given user. Higher means more diverse.")
             print("Novelty:   Average popularity rank of recommended items. Higher means more novel.")
             
-    def SampleTopNRecs(self, ml, testSubject=85, k=10):
+    def sampleTopNRecs(self, ml, testSubject=85, k=10):
         for algo in self.algorithms:
-            print("\nUsing recommender ", algo.GetName())
+            print("\nUsing recommender ", algo.getName())
             
             print("\nBuilding recommendation model...")
             trainSet = self.dataset.getFullTrainSet()
-            algo.GetAlgorithm().fit(trainSet)
+            algo.getAlgorithm().fit(trainSet)
             
             print("Computing recommendations...")
             testSet = self.dataset.GetAntiTestSetForUser(testSubject)
-            predictions = algo.GetAlgorithm().test(testSet)
+            predictions = algo.getAlgorithm().test(testSet)
             
             recommendations = []
             

@@ -9,7 +9,7 @@ Created on Tue Mar 12 11:09:21 2019
 from MovieLens import MovieLens
 from ContentKNNAlgorithm import ContentKNNAlgorithm
 from Evaluator import Evaluator
-from surpise import NormalPredictor
+from surprise import NormalPredictor
 
 import random
 import numpy as np
@@ -32,12 +32,12 @@ random.seed(0)
 evaluator = Evaluator(evaluationData, rankings)
 
 contentKNN = ContentKNNAlgorithm()
-evaluator.AddAlgorithm(contentKNN, "ContentKNN")
+evaluator.addAlgorithm(contentKNN, "ContentKNN")
 
 # just make random recommendations
 Random = NormalPredictor()
-evaluator.AddAlgorithm(Random, "Random")
+evaluator.addAlgorithm(Random, "Random")
 
-evaluator.Evaluate(False)
+evaluator.evaluate(False)
 
-evaluator.SampleTopNRecs(ml)
+evaluator.sampleTopNRecs(ml)

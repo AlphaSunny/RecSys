@@ -34,13 +34,13 @@ class EvaluationData:
         self.simsAlgo = KNNBaseline(sim_options = sim_options)
         self.simsAlgo.fit(self.fullTrainSet)
         
-    def GetFullTrainSet(self):
+    def getFullTrainSet(self):
         return self.fullTrainSet
     
-    def GetFullAntiTestSet(self):
+    def getFullAntiTestSet(self):
         return self.fullAntiTestSet
     
-    def GetAntiTestSetForUser(self, testSubject):
+    def getAntiTestSetForUser(self, testSubject):
         trainset = self.fullTrainSet
         fill = trainset.global_mean
         anti_testset = []
@@ -54,7 +54,7 @@ class EvaluationData:
         
         
     def getTrainSet(self):
-        return self.trainset
+        return self.trainSet
     
     def getTestSet(self):
         return self.testSet
@@ -72,4 +72,4 @@ class EvaluationData:
         return self.simsAlgo
     
     def getPopularityRankings(self):
-        returnn self.rankings
+        return self.rankings

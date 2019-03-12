@@ -11,7 +11,7 @@ from surprise import PredictionImpossible
 from MovieLens import MovieLens
 import math
 import numpy as np
-import headq
+import heapq
 
 class ContentKNNAlgorithm(AlgoBase):
     def __init__(self, k=40, sim_options={}):
@@ -89,7 +89,7 @@ class ContentKNNAlgorithm(AlgoBase):
             neighbors.append((genreSimilarity, rating[1]))
         
         # 提取top-K最相似的排名
-        k_neighbors = headq.nlargest(self.k, neighbors, key = lambda t:t[0])
+        k_neighbors = heapq.nlargest(self.k, neighbors, key = lambda t:t[0])
         
         # 计算平均sim得分对于k近邻，weighted靠用户评分
         simTotal = weightedSum = 0

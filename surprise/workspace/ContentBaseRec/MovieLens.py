@@ -24,13 +24,13 @@ class MovieLens:
     moviesPath = '../../datasets/movies.csv'
     
     def loadMovieLensLatestSmall(self):
-        os.chdir(os.path.dirname(sys.argv[0]))
+        #os.chdir(os.path.dirname(sys.argv[0]))
         
         ratingsDataset = 0
         self.movieID_to_name = {}
         self.name_to_movieID = {}
         
-        reader = Reader(line_formate = 'user item rating timestamp', sep = ',', skip_lines = 1)
+        reader = Reader(line_format = 'user item rating timestamp', sep = ',', skip_lines = 1)
 
         ratingsDataset = Dataset.load_from_file(self.ratingsPath, reader=reader)
         
@@ -85,7 +85,7 @@ class MovieLens:
         genres = defaultdict(list)
         genreIDs = {}
         maxGenreID = 0
-        with open(self.moviePath, newline='', encoding='ISO-8859-1') as csvfile:
+        with open(self.moviesPath, newline='', encoding='ISO-8859-1') as csvfile:
             movieReader = csv.reader(csvfile)
             next(movieReader)
             for row in movieReader:
